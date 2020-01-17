@@ -17,37 +17,14 @@
 
 /* Instances */
 
-.multiupload-files {
-	background: none;
-}
-
-.multiupload-files ul,
-.multiupload-files ol {
-	margin: 0;
-}
-
-.multiupload-files .instance .content {
-	display: none;
-}
-
 .multiupload-files .instance .frame-header {
-	transition: background 0.2s;
-	flex-direction: column-reverse;
-	align-items: center;
+	padding: var(--standard-inner-rhythm);
+	justify-content: space-between;
+	display: flex;
 }
 
-.multiupload-files .instance .frame-header .destructor {
-	margin: 0 0 0.5rem;
-}
-
-.multiupload-files .instance .frame-header a:first-of-type {
-	color: #2f77eb;
-	font-size: 1.2rem;
-	margin-left: 0!important;
-}
-
-.multiupload-files .instance .frame-header a:first-of-type:hover {
-	color: currentColor;
+.multiupload-files .instance .frame-header * {
+	max-width: max-content;
 }
 
 .multiupload-files .instance .frame-header img {
@@ -57,31 +34,7 @@
 /* Duplicator */
 
 .multiupload-drop {
-	border-radius: 5px 5px 0 0;
-	padding-bottom: 0;
-	margin-top: -2rem;
-	margin-bottom: 0;
-}
-
-.multiupload-drop.empty {
-	min-height: 0;
-	height: 0;
-	border: 0;
-}
-
-.multiupload-drop.empty ol {
-	border: none;
-	min-height: 0;
-}
-
-.multiupload-drop.empty + .multiupload-droparea {
-	border-radius: 5px;
-	border-top: 1px solid #d3dce2;
-}
-
-.multiupload-drop li:last-of-type {
-	border-bottom-left-radius: 0 !important;
-	border-bottom-right-radius: 0 !important;
+	margin-top: calc(var(--compensate-for-inner-field-label) + var(--standard-inner-rhythm));
 }
 
 /* Progress bar */
@@ -92,7 +45,7 @@
 	left: 0;
 	width: 2%;
 	height: 4px;
-	background: #2f77eb;
+	background: var(--color-accent);
 	opacity: 0;
 	-webkit-transition: width 0.25s ease-in, opacity 0.25s ease-in 0.4s;
 	-moz-transition: width 0.25s ease-in, opacity 0.25s ease-in 0.4s;
@@ -107,14 +60,11 @@
 /* Drop area */
 
 .multiupload-droparea {
-	border-radius: 0 0 5px 5px;
-	background: #fff;
-	border: 1px solid #d3dce2;
-	border-top: none;
-	text-align: center;
-	padding: 20px;
-	color: #b8b8b8;
+	background: var(--color-accent-light);
+	border: 1px solid var(--color-ui);
+	padding: var(--standard-inner-rhythm);
 }
+
 .multiupload-drop.empty + .multiupload-droparea {
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
@@ -122,21 +72,24 @@
 }
 
 .multiupload-droparea span {
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	display: block;
-	color: rgba(0, 0, 0, 0.25);
-	pointer-event: none;
+	display: flex;
+	font-size: var(--text-big);
+	font-weight: 740;
+	color: var(--color-main-light);
+	pointer-events: none;
+	align-items: center;
 }
 
 .multiupload-droparea span::before {
 	font-family: icons;
-	font-size: 40px;
+	font-size: 2em;
 	color: rgba(0, 0, 0, 0.1);
 	content: '\e800';
 	display: block;
 	line-height: 1;
+	margin-right: var(--standard-inner-rhythm);
 }
+
 .multiupload-droparea.multiupload-drag span::before {
 	color: rgba(0, 0, 0, 0.25);
 }
